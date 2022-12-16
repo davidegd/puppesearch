@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chromium": "^3.0.3",
     "express": "^4.18.2",
     "puppeteer": "^19.3.0",
     "puppeteer-core": "^19.4.0",
