@@ -3,6 +3,7 @@ const app = express();
 const Controller = require("./apiController");
 const path = require("path");
 
+const PORT = process.env.PORT || 4000;
 app.get("/api/search", Controller.Search);
 
 // app.get("/*", function (req, res) {
@@ -19,8 +20,8 @@ app.get("/api/search", Controller.Search);
 
 // app.use(express.static(path.join(__dirname, "../build")));
 
-app.listen(4000, () => {
-  console.log("server runing on 4000");
+app.listen(PORT, () => {
+  console.log("server runing on ", PORT);
 });
 
 module.exports = app;
