@@ -1,6 +1,6 @@
 const Services = {};
 
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 const { executablePath } = require("puppeteer");
 
 const transformData = (data) => {
@@ -25,10 +25,7 @@ const transformData = (data) => {
 Services.Search = (params) =>
   new Promise(async (resolve, reject) => {
     try {
-      const browser = await puppeteer.launch({
-        executablePath: executablePath(),
-      });
-
+      const browser = await puppeteer.launch();
       const page = await browser.newPage();
       await page.goto("https://www.musiciansfriend.com/");
       await page.type("#searchTerm", params);
